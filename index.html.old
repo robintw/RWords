@@ -1,0 +1,144 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="default.css">
+<title>RScrabble Word Searching</title>
+</head>
+
+<body>
+<h1>RScrabble Word Searching</h1>
+<br>
+This page allows simple searching of Scrabble words from the SOWPODS dictionary (see the <a href="http://en.wikipedia.org/wiki/SOWPODS">Wikipedia SOWPODS entry</a>).
+Most of the searches should be self explanatory.
+<p>
+If anything breaks while using this page then please contact me at r DOT t DOT wilson AT rmplc DOT co DOT uk and I can try and fix it.
+<p>
+<table border=0>
+  <tr>
+    <td width="33%" valign="top" align="center">
+      <b>Word Inclusion Search</b>
+    </td>
+
+    <td width="33%" valign="top" align="center">
+      <b>Letter Inclusion Search</b>
+    </td>
+
+    <td width="33%" valign="top" align="center">
+      <b>Anagram Search</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td width="33%" valign="top">
+      This search takes the input and returns all words which include the anywhere within them. For example, given <tt>test</tt> it will return a list
+      of words including <tt>testing</tt>, <tt>tester</tt>, <tt>detest</tt>, <tt>retest</tt>, <tt>untested</tt> and <tt>contestant</tt>.
+    </td>
+
+    <td width="33%" valign="top">
+      This search takes a string of letters (eg. <tt>hdirf</tt>) as input and returns all words which include those letters anywhere within them.
+      For the example above it will return a list of words including <tt>redshift</tt>, <tt>unfurnished</tt>, <tt>headfirst</tt> and <tt>frightened</tt>.
+    </td>
+
+    <td width="33%" valign="top">
+      This does an anagram of the letters. That's about it!
+    </td>
+  </tr>
+
+  <tr>
+
+    <td valign="middle" align="center">
+      <form action="process.rhtml" method=POST>
+      <input type=text name="data">
+      <input type=hidden name="type" value="1">
+      <input class="button" type=submit value="Search">
+      </form>
+    </td>
+
+    <td valign="middle" align="center">
+      <form action="process.rhtml" method=POST>
+      <input type=text name="data">
+      <input type=hidden name="type" value="2">
+      <input class="button" type=submit value="Search">
+      </form>
+    </td>
+
+    <td valign="middle" align="center">
+      <form action="process.rhtml" method=POST>
+      <input type=text name="data">
+      <input type=hidden name="type" value="3">
+      <input class="button" type=submit value="Search">
+      </form>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="middle" align="center">
+      <b>Beginning search</b>
+    </td>
+    <td valign="middle" align="center">
+      <b>Ending search</b>
+    </td>
+    <td valign="middle" align="center">
+      <b>Regexp search</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Searches for words beginning with the specified text
+    </td>
+    <td>
+      Searches for words ending with the specified text
+    </td>
+    <td>
+      Searches using a regular expression. If you don't know what this is - then you don't want to use it :p
+    </td>
+  </tr>
+
+  <tr valign="middle">
+    <td align="center">
+      <form action="process.rhtml" method=POST>
+      <input type=text name="data">
+      <input type=hidden name="type" value="5">
+      <input class="button" type=submit value="Search">
+      </form>
+    </td>
+    <td valign="middle" align="center">
+      <form action="process.rhtml" method=POST>
+      <input type=text name="data">
+      <input type=hidden name="type" value="6">
+      <input class="button" type=submit value="Search">
+      </form>
+    </td>
+    <td valign="middle" align="center">
+      <form action="process.rhtml" method=POST>
+      <input type=text name="data">
+      <input type=hidden name="type" value="4">
+      <input class="button" type=submit value="Search">
+      </form>
+    </td>
+  </tr>
+  </table>
+  <hr>
+    <p>
+
+  <hr>
+  <b>Coming soon</b>
+  <ul>
+    <li>Proper CSS layout</li>
+    <li>Nicer UI</li>
+    <li>Feedback page</li>
+  </ul>
+  <!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.rtwilson.com/" : "http://piwik.rtwilson.com/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.rtwilson.com/piwik.php?idsite=2" style="border:0" alt=""/></p></noscript>
+<!-- End Piwik Tag -->
+  </body>
+  </html>

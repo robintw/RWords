@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+	<TITLE>RScrabble Results</TITLE>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="./blueprint/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="./blueprint/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="../../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	
+	
+	<!-- Import fancy-type plugin for the sample page. -->
+	<link rel="stylesheet" href="./blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="custom.css" type="text/css">
+</HEAD>
+
+<BODY>
+<div class="container">
+	<h1 class="header center">RScrabble Results</h1>
+	<hr>
+ <%
+    require '/home/robintw/rtwilson.com/words/search.rb'
+  require '/home/robintw/rtwilson.com/words/output.rb'
+  
+  Dir.chdir('/home/robintw/rtwilson.com/words/')
+
+  cgi = CGI.new
+
+  if (cgi.has_key?('type') && cgi.has_key?('data')) then
+    case cgi['type']
+    when "1"
+      # Word inclusion
+
+      # Conver the word to uppercase
+      search_word = cgi['data'].upcase
+
+      # Search and print output
+      print_output(include_word(search_word))
+    when "2"
+      # Letter inclusion
+
+      # Split letters out into array
+      cgi_letters = cgi['data'].upcase
+      letters = cgi_letters.split("")
+
+      # Search and print output
+      print_output(letter_inclusion(letters, false))
+    when "3"
+      # Anagram
+
+      # Split letters out into array
+      cgi_letters = cgi['data'].upcase
+      letters = cgi_letters.split("")
+
+      # Search and print output
+      print_output(letter_inclusion(letters, true))
+    when "4"
+      # Regexp matching
+
+      search_word = cgi['data'].upcase
+
+      # Search and print output
+      print_output(regexp(search_word))
+    when "5"
+      # Beginning matching
+
+      search = cgi['data'].upcase
+      search = search + '.+'
+      print_output(regexp(search))
+    when "6"
+      # Ending matching
+
+      search = cgi['data'].upcase
+      search = '.+' + search
+      print_output(regexp(search))
+    end
+  end
+  %>
+</div>
+</BODY>
+</HTML>

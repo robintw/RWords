@@ -1,0 +1,49 @@
+h1
+{
+    color: red;
+}
+
+p.warning
+{
+	border-width: 2px;
+	border-spacing: 2px;
+	border-color: red;
+	border-style: solid;
+}
+
+body
+{
+    background-color: #FFFFCC;
+    font-family: arial;
+}
+
+hr
+{
+    color: black;
+    background-color: black;
+    height: 3px;
+}
+
+table
+{
+    border-width: 1px;
+    border-spacing: 2px;
+    border-style: solid;
+    border-color: black;
+	border-collapse: collapse;
+}
+
+td, th
+{
+    border-width: 1px;
+    border-spacing: 0px;
+    border-style: solid;
+    border-color: black; 
+}
+
+input.button
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}

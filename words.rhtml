@@ -1,0 +1,57 @@
+  <%
+require 'rubygems'
+    require 'search'
+  require 'output'
+
+  cgi = CGI.new
+
+  if (cgi.has_key?('type') && cgi.has_key?('data')) then
+    case cgi['type']
+    when "1"
+      # Word inclusion
+
+      # Conver the word to uppercase
+      search_word = cgi['data'].upcase
+
+      # Search and print output
+      print_output(include_word(search_word))
+    when "2"
+      # Letter inclusion
+
+      # Split letters out into array
+      cgi_letters = cgi['data'].upcase
+      letters = cgi_letters.split("")
+
+      # Search and print output
+      print_output(letter_inclusion(letters, false))
+    when "3"
+      # Anagram
+
+      # Split letters out into array
+      cgi_letters = cgi['data'].upcase
+      letters = cgi_letters.split("")
+
+      # Search and print output
+      print_output(letter_inclusion(letters, true))
+    when "4"
+      # Regexp matching
+
+      search_word = cgi['data'].upcase
+
+      # Search and print output
+      print_output(regexp(search_word))
+    when "5"
+      # Beginning matching
+
+      search = cgi['data'].upcase
+      search = search + '.+'
+      print_output(regexp(search))
+    when "6"
+      # Ending matching
+
+      search = cgi['data'].upcase
+      search = '.+' + search
+      print_output(regexp(search))
+    end
+  end
+  %>

@@ -1,0 +1,57 @@
+p {
+  text-indent: 0;
+  margin-bottom: 2.5em ;
+}
+p + p {
+  text-indent: 0em;
+  margin-bottom: 2.5em ;
+}
+
+p.nogap {
+  margin-bottom: 0.5em ;
+}
+
+ul.nav {
+	list-style-type: none;
+	list-style-position: inside;
+	text-indent: 0;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+ul.noindent {
+	text-indent: 0;
+	margin-left: 0;
+	padding-left: 0;
+	list-style-position: inside;
+}
+
+li.high {
+	color: #E31A1C;
+}
+
+li.medium {
+	color: #FD8D3C;
+}
+
+li.low {
+	color: #FECC5C;
+}
+
+.header {
+	padding-top: 7px;
+}
+
+p.warning {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	text-align: center ;
+}
+
+.center {
+	text-align: center;
+}
+
+body {
+	background-color: #FAFAD2;
+}

@@ -1,0 +1,109 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="./blueprint/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="./blueprint/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="../../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	
+	
+	<!-- Import fancy-type plugin for the sample page. -->
+	<link rel="stylesheet" href="./blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="custom.css" type="text/css">
+	<title>RScrabble</title>
+	</head>
+	<body>
+	<div class="container">
+	<h1 class="header center">RWords</h1>
+	<hr>
+	<div class="span-24 last">
+		<p>This page allows simple searching of words from the <a href="http://en.wikipedia.org/wiki/SOWPODS">SOWPODS dicutionary</a> - a dictionary often used in Scrabble tournaments. This tool was originally designed to help with Scrabble games, but is also useful for other words games and crosswords.</p>
+		<p>If you've got any suggestions for improvements, or if anything breaks, then please <a href="mailto:r.t.wilson@rmplc.co.uk">email me</a>.</p>
+		</br>
+		
+		<div class="span-8">
+			<h6>Word Inclusion</h6>
+			<p class="nogap">This search takes the input and returns all words which include the anywhere within them. For example, given <tt>test</tt> it will return a list of words including <tt>testing</tt>, <tt>tester</tt>, <tt>detest</tt>, <tt>retest</tt>, <tt>untested</tt> and <tt>contestant</tt>.</p>
+		</div>
+		
+		<div class="span-8">
+			<h6>Letter Inclusion</h6>
+			<p class="nogap">This search takes a string of letters (eg. <tt>hdirf</tt>) as input and returns all words which include those letters anywhere within them. For the example above it will return a list of words including <tt>redshift</tt>, <tt>unfurnished</tt>, <tt>headfirst</tt> and <tt>frightened</tt>.</p>
+		</div>
+		
+		<div class="span-8 last">
+			<h6>Anagram</h6>
+			<p>This does an anagram of the letters. That's about it!</p>
+		</div>
+		
+		
+		<div class="span-8">
+			<form action="process.rhtml" method=POST>
+	        <input type=text name="data">
+	        <input type=hidden name="type" value="1">
+	        <input class="button" type=submit value="Search">
+	        </form>
+		</div>
+		
+		<div class="span-8">
+			<form action="process.rhtml" method=POST>
+	        <input type=text name="data">
+	        <input type=hidden name="type" value="2">
+	        <input class="button" type=submit value="Search">
+	        </form>
+		</div>
+		
+		<div class="span-8 last">
+			<form action="process.rhtml" method=POST>
+	        <input type=text name="data">
+	        <input type=hidden name="type" value="3">
+	        <input class="button" type=submit value="Search">
+	        </form>
+		</div>
+		
+		<hr/>
+		
+		<div class="span-8">
+			<h6>Beginning with</h6>
+			<p class="nogap">Searches for words beginning with the specified text.</p>
+		</div>
+		
+		<div class="span-8">
+			<h6>Ending with</h6>
+			<p class="nogap">Searches for words ending with the specified text.</p>
+		</div>
+		
+		<div class="span-8 last">
+			<h6>Regular Expression</h6>
+			<p>Searches using a regular expression. If you don't know what this is then you probably don't want to use it!</p>
+		</div>
+		
+		
+		<div class="span-8">
+			<form action="process.rhtml" method=POST>
+	        <input type=text name="data">
+	        <input type=hidden name="type" value="5">
+	        <input class="button" type=submit value="Search">
+	        </form>
+		</div>
+		
+		<div class="span-8">
+			<form action="process.rhtml" method=POST>
+	        <input type=text name="data">
+	        <input type=hidden name="type" value="6">
+	        <input class="button" type=submit value="Search">
+	        </form>
+		</div>
+		
+		<div class="span-8 last">
+			<form action="process.rhtml" method=POST>
+	        <input type=text name="data">
+	        <input type=hidden name="type" value="4">
+	        <input class="button" type=submit value="Search">
+	        </form>
+		</div>
+		
+	</div>
+</div>
+</body>
+</html>
